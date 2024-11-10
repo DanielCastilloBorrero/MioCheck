@@ -14,7 +14,7 @@ class MainWindow(QMainWindow):
     def buildWindow(self):
         self.resize(1100,500)
         self.setWindowTitle("MioCheck")
-        self.setWindowIcon(QIcon('./View/ecg.png'))
+        self.setWindowIcon(QIcon('./View/source/ecg.png'))
         qRect = self.frameGeometry()
         centerPoint = QGuiApplication.primaryScreen().availableGeometry().center()
         qRect.moveCenter(centerPoint)

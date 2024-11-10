@@ -48,7 +48,7 @@ class Container(QWidget):
         label_Image = QLabel()
         label_Image.setMinimumWidth(150)
         label_Image.setMaximumWidth(150)
-        pixmap = QPixmap("./View/Heart.png").scaled(label_Image.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        pixmap = QPixmap("./View/source/Heart.png").scaled(label_Image.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         label_Image.setPixmap(pixmap)
         
         self.label_heart_text = QLabel()
@@ -73,7 +73,7 @@ class Container(QWidget):
         labelImage = QLabel()
         labelImage.setMinimumWidth(150)
         labelImage.setMaximumWidth(150)
-        pixmap = QPixmap("./View/SPO2.png").scaled(labelImage.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        pixmap = QPixmap("./View/source/SPO2.png").scaled(labelImage.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         labelImage.setPixmap(pixmap)
         
         self.label_oxy_text = QLabel()
@@ -98,7 +98,7 @@ class Container(QWidget):
         labelImage = QLabel()
         labelImage.setMinimumWidth(150)
         labelImage.setMaximumWidth(150)
-        pixmap = QPixmap("./View/Temp.png").scaled(labelImage.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        pixmap = QPixmap("./View/source/Temp.png").scaled(labelImage.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         labelImage.setPixmap(pixmap)
         
         self.label_temp_text = QLabel()
