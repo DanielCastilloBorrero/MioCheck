@@ -24,15 +24,15 @@ class Datos():
             linea = self.serialPort.readline().decode('utf-8').rstrip()
             valores = linea.split(',')
             
-            global datos
-            datos = {
+            self.datos = {
                 'irValue': valores[0],
                 'beatsPerMinute': valores[1],
                 'beatAvg': valores[2],
                 'redValue': valores[3],
-                'finger': valores[4]
+                'temperature': valores[4],
+                'finger': valores[5]
             }
-            return datos
+            return self.datos
         except AttributeError as err:
             print(f'Error prro{err}')
             return None

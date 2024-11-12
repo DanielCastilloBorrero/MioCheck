@@ -54,7 +54,6 @@ class Container(QWidget):
         self.label_heart_text = QLabel()
         self.label_heart_text.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_heart_text.setFont(self.font)
-        self.label_heart_text.setText("No Finger")
         
         layout = QHBoxLayout()
         layout.addWidget(label_Image)
@@ -78,7 +77,6 @@ class Container(QWidget):
         
         self.label_oxy_text = QLabel()
         self.label_oxy_text.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_oxy_text.setText("Saturación\n99%")
         self.label_oxy_text.setFont(self.font)
         
         layout = QHBoxLayout()
@@ -103,7 +101,6 @@ class Container(QWidget):
         
         self.label_temp_text = QLabel()
         self.label_temp_text.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.label_temp_text.setText('Temperatura\n0°C')
         self.label_temp_text.setFont(self.font)
         
         layout = QHBoxLayout()
@@ -127,10 +124,18 @@ class Container(QWidget):
                     #self.plot_ir.setData(self.data_ir)
                     self.plot_red.setData(self.data_red)
 
-                    self.label_heart_text.setText(f"{data_dict['beatAvg']} Bpm")
+                    self.label_heart_text.setText(f"Heart Rate\n{data_dict['beatAvg']} Bpm")
+                    self.label_temp_text.setText(f"Temperatura\n{data_dict['temperature']} °C")
+                    
                 else:    
-                    self.label_heart_text.setText("No Finger")
+                    self.label_heart_text.setText("Heart Rate\nNo Finger")
+                    self.label_oxy_text.setText("SPO2\nNo Finger")
+                    self.label_temp_text.setText("Temperatura\nNo Finger")
+                    
             except ValueError as val:
                 pass
-        
+        else:    
+            self.label_heart_text.setText("Heart Rate\nNo Disponible")
+            self.label_oxy_text.setText("SPO2\nNo Disponible")
+            self.label_temp_text.setText("Temperatura\nNo Disponible")
     
